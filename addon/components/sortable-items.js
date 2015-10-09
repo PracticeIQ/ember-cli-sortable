@@ -31,6 +31,9 @@ var SortableItems = Ember.Component.extend({
   scroll: true,
   scrollSensitivity: 30, // px
   scrollSpeed: 10, // px
+  forceFallback: false,
+  fallbackClass: 'sortable-fallback',
+  fallbackOnBody: false,
 
   /**
     @method setup
@@ -51,6 +54,9 @@ var SortableItems = Ember.Component.extend({
       scroll: this.get('scroll'),
       scrollSensitivity: this.get('scrollSensitivity'),
       scrollSpeed: this.get('scrollSpeed'),
+      fallbackClass: this.get('fallbackClass'),
+      forceFallback: this.get('forceFallback'),
+      fallbackOnBody: this.get('fallbackOnBody'),
       onStart: Ember.run.bind(this, this._onStart),
       onEnd: Ember.run.bind(this, this._onEnd),
       onAdd: Ember.run.bind(this, this._onAdd),
