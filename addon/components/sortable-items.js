@@ -64,7 +64,8 @@ var SortableItems = Ember.Component.extend({
       onSort: Ember.run.bind(this, this._onSort),
       onRemove: Ember.run.bind(this, this._onRemove),
       onFilter: Ember.run.bind(this, this._onFilter),
-      onMove: Ember.run.bind(this, this._onMove)
+      onMove: Ember.run.bind(this, this._onMove),
+      onDragOver: Ember.run.bind(this, this._onDragOver)
     };
 
     if (this.get('draggable')) {
@@ -179,6 +180,14 @@ var SortableItems = Ember.Component.extend({
   */
   _onFilter: function(evt) {
     this._sendOutAction('onFilterAction', evt);
+  },
+
+  _onDragOver: function(evt) {
+    this._sendOutAction('onDragOverAction', evt);
+  },
+
+  _onDragOverEnd: function(evt) {
+    this._sendOutAction('onDragOverEndAction', evt);
   },
 
   /**
