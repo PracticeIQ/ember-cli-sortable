@@ -24,6 +24,7 @@ var SortableItems = Ember.Component.extend({
   disabled: false,
   store: null,
   animation: 150,
+  delay: 150,
   handle: '',
   filter: '',
   draggable: '',
@@ -41,7 +42,6 @@ var SortableItems = Ember.Component.extend({
     callbacks to private methods
   */
   setup: function() {
-
     var options = {
       group: this.get('group'),
       sort: this.get('sort'),
@@ -52,6 +52,7 @@ var SortableItems = Ember.Component.extend({
       filter: this.get('filter'),
       ghostClass: this.get('ghostClass'),
       scroll: this.get('scroll'),
+      delay: this.get('delay'),
       scrollSensitivity: this.get('scrollSensitivity'),
       scrollSpeed: this.get('scrollSpeed'),
       fallbackClass: this.get('fallbackClass'),
